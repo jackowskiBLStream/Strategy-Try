@@ -39,9 +39,8 @@ public class List<E> extends AbstractClasses.List<E> {
      * Removes element at specified index in List
      *
      * @param index Index of element to be Removed
-     * @throws RemoveMethodException when index out of range
      */
-    public void removeElement(int index) throws RemoveMethodException {
+    public void removeElement(int index) {
         if (index < 0 || index > getSize() - 1) {
             throw new RemoveMethodException(index);
         }
@@ -89,10 +88,9 @@ public class List<E> extends AbstractClasses.List<E> {
      *
      * @param index index of element to return
      * @return List item at specified index
-     * @throws GetMethodException when index out of range
      */
     @Override
-    public E get(int index) throws GetMethodException {
+    public E get(int index)  {
         if (index < 0 || index > getSize() - 1) {
             throw new GetMethodException(index);
         }
@@ -105,7 +103,6 @@ public class List<E> extends AbstractClasses.List<E> {
      *
      * @param index index of element to replace
      * @param o     Element that will be added to specified index
-     * @throws SetMethodException when index out of range
      */
     public void set(int index, E o) throws SetMethodException {
         if (index < 0 || index > getSize() - 1) {

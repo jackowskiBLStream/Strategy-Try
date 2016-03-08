@@ -3,7 +3,7 @@ package Exception;
 /**
  * RemoveMethodException thrown when index of element to be removed is out of range
  */
-public class RemoveMethodException extends IndexOutOfBoundOfList {
+public class RemoveMethodException extends ListException {
     /**
      * @param index of list's element
      */

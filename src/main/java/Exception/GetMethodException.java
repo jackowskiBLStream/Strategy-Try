@@ -3,7 +3,7 @@ package Exception;
 /**
  * GetMethodException thrown when index of element to be got is out of range
  */
-public class GetMethodException extends IndexOutOfBoundOfList {
+public class GetMethodException extends ListException {
 
     public GetMethodException(int index) {
         this.index = index;

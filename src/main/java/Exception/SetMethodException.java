@@ -3,7 +3,7 @@ package Exception;
 /**
  * SetMethodException thrown when index of element to be set is out of range
  */
-public class SetMethodException extends IndexOutOfBoundOfList {
+public class SetMethodException extends ListException {
 
     public SetMethodException(int index) {
         this.index = index;

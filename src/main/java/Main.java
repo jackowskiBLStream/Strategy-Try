@@ -1,5 +1,3 @@
-import Exception.GetMethodException;
-import Exception.RemoveMethodException;
 import TwoWayList.List;
 
 /**
@@ -22,16 +20,10 @@ public class Main {
         list.addElement(3);
         // printWholeList(list);
 
-        try {
-            try {
-                list.get(100);
-            } catch (GetMethodException e) {
-                e.printErrorMessage();
-            }
-            list.removeElement(10);
-        } catch (RemoveMethodException e) {
-            e.printErrorMessage();
-        }
+
+        list.get(100);
+
+        list.removeElement(10);
 
 
         //printWholeList(list);

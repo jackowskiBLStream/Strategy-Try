@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Created by INV-6179 on 03.03.2016.
@@ -126,44 +127,14 @@ public class ListTest {
         assertEquals("incorrect status of list", true, listSecond.isEmpty());
     }
 
-    @Test
-    public void testContainsWhileHasElement() throws Exception {
-
-        assertEquals("incorrect status of element", true, listSecond.contains(-50));
-    }
-
-    @Test
-    public void testContainsWhileHasNotElement() throws Exception {
-
-        assertEquals("incorrect status of element", false, listSecond.contains(154));
-    }
-
-    @Test
-    public void testContainsAfterAddElement() throws Exception {
-        listSecond.addElement(99);
-        assertEquals("incorrect status of element", true, listSecond.contains(99));
-    }
-
-    @Test
-    public void testContainsAfterRemoveElement() throws Exception {
-        listSecond.removeElement(0);
-        assertEquals("incorrect status of element", false, listSecond.contains(0));
-    }
 
     @Test
     public void testGetWhileElementIsCorrect() throws Exception {
         assertEquals("incorrect element of this index", -50, (int) listSecond.get(1));
     }
 
-    @Test
-    public void testGetWhileIndexGreaterThanSize() throws Exception {
-        assertEquals("index is greater than size", null, listSecond.get(100));
-    }
 
-    @Test
-    public void testGetWhileIndexNegative() throws Exception {
-        assertEquals("index is negative", null, listSecond.get(-1));
-    }
+
 
     @Test
     public void testGetAfterRemoveElementOfThisIndex() throws Exception {
@@ -178,15 +149,17 @@ public class ListTest {
     }
 
     @Test(expected = GetMethodException.class)
-    public void shouldCatchGetMethodExceptionWhenIndexGreaterThanSize() throws GetMethodException {
+    public void shouldThrowGetMethodExceptionWhenIndexGreaterThanSize() throws GetMethodException {
         //given
         List<Integer> tryList = new List<Integer>();
-
-        //when
         int index = 10;
 
-        //then
+        //when
         tryList.get(index);
+
+        //then Exception
+        fail("Exception should be thrown");
+
     }
 
     @Test(expected = GetMethodException.class)

@@ -163,7 +163,7 @@ public class ListTest {
     }
 
     @Test(expected = GetMethodException.class)
-    public void shouldCatchGetMethodExceptionWhenNegativeIndex() throws GetMethodException {
+    public void shouldThrowGetMethodExceptionWhenNegativeIndex() throws GetMethodException {
         //given
         List<Integer> tryList = new List<Integer>();
 

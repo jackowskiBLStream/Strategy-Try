@@ -1,0 +1,45 @@
+import Exception.GetMethodException;
+import Exception.RemoveMethodException;
+import TwoWayList.List;
+
+/**
+ * Main class of program
+ */
+
+public class Main {
+    public static void main(String args[]) {
+        List<Integer> list = new List<>();
+        List<Integer> list2 = new List<>();
+        list2.removeFirst();
+        list2.addElement(1);
+        list2.removeFirst();
+        list2.addElement(1);
+        list2.addElement(1);
+        list2.removeFirst();
+        list.addElement(1);
+        list.addElement(1);
+        list.addElement(2);
+        list.addElement(3);
+        // printWholeList(list);
+
+        try {
+            try {
+                list.get(100);
+            } catch (GetMethodException e) {
+                e.printErrorMessage();
+            }
+            list.removeElement(10);
+        } catch (RemoveMethodException e) {
+            e.printErrorMessage();
+        }
+
+
+        //printWholeList(list);
+    }
+
+    /*static void printWholeList(List list) {
+        for (int i = 0; i < list.getSize(); i++) {
+            System.out.println(list.get(i));
+        }
+    }*/
+}
